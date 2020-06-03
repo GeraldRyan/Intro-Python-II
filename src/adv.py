@@ -7,6 +7,7 @@ def introduction():
     print("Welome, you're our new explorer, let's start off by introducing yourself. What is your name?")
     name = input("")
     print("Hello, " + name +", you are vacationing on an island talking a random walk around and stumble on an old abandoned house. You decide to walk around. See if you can find any treasure.")
+    return name
 
 # is a repl a special thing
 # how do room and player class connect
@@ -47,8 +48,9 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
-player1 = player(name, 'novice')
+name = introduction()
+player1 = Player(name, 'novice')
+player1.play()
 
 # Write a loop that:
 #

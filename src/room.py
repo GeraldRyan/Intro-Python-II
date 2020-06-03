@@ -7,16 +7,22 @@ class Room:
     self.name = name
     self.desc = desc
 
-  def __str__:
+  def __str__(self):
     return "{name}, {desc}"
 
-  def move(cmd):
-    if cmd=n:
-      
-    if cmd=s:
 
-    if cmd=e:
 
-    if cmd=w:
+
+
+  # 
+
+  # def move(cmd):
+  #   if cmd=n:
       
-    if cmd=q:
+  #   if cmd=s:
+
+  #   if cmd=e:
+
+  #   if cmd=w:
+
+  #   if cmd=q:
