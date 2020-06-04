@@ -50,7 +50,8 @@ room['treasure'].s_to = room['narrow']
 # Make a new player object that is currently in the 'outside' room.
 name = introduction()
 player1 = Player(name, 'novice')
-player1.play()
+while True:
+    player1.play()
 
 # Write a loop that:
 #

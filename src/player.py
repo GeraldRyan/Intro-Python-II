@@ -16,7 +16,7 @@ class Player:
     if cmd=="s":
       exit()
     if cmd=="e":
-      exit()
+      print("E")
     if cmd=="w":
       exit()
     if cmd=="q":
