@@ -14,21 +14,21 @@ def introduction():
 
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons"),
+                     "North of you, the cave mount beckons",'rocks'),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
 passages run north and east."""),
 
     'overlook': Room("Grand Overlook", """A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm."""),
+the distance, but there is no way across the chasm.""",'rocks'),
 
     'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
 to north. The smell of gold permeates the air."""),
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south."""),
+earlier adventurers. The only exit is to the south.""", ['treasure chest', 'rusty knife'])
 }
 
 
@@ -51,10 +51,10 @@ room['treasure'].s_to = room['narrow']
 name = introduction()
 current_room = room['outside']
 player1 = Player(name)
-print(player1.name)
+print("Hello", player1.name)
 while True:
-    print(current_room.name, current_room.desc)
-    cmd = player1.play()
+    print(current_room.name, current_room.desc, ".You see", current_room.items, 'near you.')
+    cmd = player1.getInput()
     try:
         if cmd == "n":
             print("Going north")
@@ -68,6 +68,12 @@ while True:
         if cmd == "w":
             print("heading west")
             current_room = current_room.w_to
+        if cmd == 'get':
+            print("adding", current_room.items, "to inventory")
+            player1.getItem(current_room.items) 
+        if cmd == 'inventory':
+            print("Your inventory includes:", player1.items)
+            
     except: 
         print("Can't travel further in that direction")
 # Write a loop that:

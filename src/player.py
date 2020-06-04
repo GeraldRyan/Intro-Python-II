@@ -2,7 +2,7 @@
 # currently.
 
 class Player:
-  def __init__(self, name="link", rank="novice", items=[]):
+  def __init__(self, name="link", rank="novice", items=''):
     self.name = name
     self.rank = rank
     self.items = items
@@ -10,7 +10,7 @@ class Player:
   def __str__(self):
     return "{name}"
 
-  def play(self):
+  def getInput(self):
     cmd = input(">>> ")
     if cmd=="q":
       exit()
@@ -25,8 +25,12 @@ class Player:
       return "e"
     if cmd=="w":
       return "w"
-
-  def getItem(item):
-    self.items += item
+    if cmd=="inventory":
+      return "inventory"
+    if cmd=="get":
+      return "get"
+  def getItem(self, item):  #why is this not being called???????????????????????????))))))))
+    print("item", item)
+    self.items = self.items + item
   def dropItem(item):
     self.items -= item

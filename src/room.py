@@ -3,7 +3,7 @@
 
 
 class Room:
-  def __init__(self, name, desc, items):
+  def __init__(self, name, desc, items=''):
     self.name = name
     self.desc = desc
     self.items = items
