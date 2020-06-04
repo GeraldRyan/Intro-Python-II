@@ -8,7 +8,7 @@ class Room:
     self.desc = desc
 
   def __str__(self):
-    return "{name}, {desc}"
+    return "{self.name}, {desc}"
 
 
 
