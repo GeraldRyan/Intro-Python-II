@@ -1,5 +1,7 @@
 from room import Room
 from player import Player
+from item import Item
+
 # Declare all the rooms
 
 
@@ -9,26 +11,34 @@ def introduction():
     print("Hello, " + name +", you are vacationing on an island talking a random walk around and stumble on an old abandoned house. You decide to walk around. See if you can find any treasure.")
     return name
 
+items = {
+    'sword': Item('sword', 'A normal sword'),
+    'rocks': Item('rocks', 'a handful of hard rocks'),
+    'dagger': Item('dagger', 'a rusty dagger'),
+    'spoon': Item('spoon', 'a silver spoon that is probably worth a little bit of coin'),
+    'jar': Item('jar', 'a jar of oil of some sort')
+}
+
 # is a repl a special thing
 # how do room and player class connect
 
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons",'rocks'),
+                     "North of you, the cave mount beckons",[items['rocks']]),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
 passages run north and east."""),
 
     'overlook': Room("Grand Overlook", """A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm.""",'rocks'),
+the distance, but there is no way across the chasm.""",[items['rocks']]),
 
     'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
 to north. The smell of gold permeates the air."""),
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south.""", ['treasure chest', 'rusty knife'])
+earlier adventurers. The only exit is to the south.""", [items['dagger'], items['spoon']])
 }
 
 
