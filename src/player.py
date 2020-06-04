@@ -1,12 +1,13 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
-from item import Item
+
 
 class Player:
-  def __init__(self, name="link", rank="novice", items=''):
+  def __init__(self, name, room, items=[],rank="novice"):
     self.name = name
     self.rank = rank
     self.items = items
+    self.room = room
 
   def __str__(self):
     return "{name}"
@@ -30,7 +31,9 @@ class Player:
       return "inventory"
     if cmd=="get":
       return "get"
-  def getItem(self, item):  #why is this not being called???????????????????????????))))))))
+    if cmd=="search":
+      return "search"
+  def getItem(self, item):  
     print("item", item)
     self.items = self.items + item
   def dropItem(item):

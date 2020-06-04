@@ -60,32 +60,37 @@ room['treasure'].s_to = room['narrow']
 # Make a new player object that is currently in the 'outside' room.
 name = introduction()
 current_room = room['outside']
-player1 = Player(name)
-print("Hello", player1.name)
+player1 = Player(name, room['outside'])
+# print("Hello", player1.name)
 while True:
-    print(current_room.name, current_room.desc, ".You see", current_room.items, 'near you.')
+    print(player1.room.name, player1.room.desc)
     cmd = player1.getInput()
     try:
         if cmd == "n":
             print("Going north")
-            current_room = current_room.n_to
+            # player1.room = player1.room.n_to
+            player1.room = player1.room.n_to
+
         if cmd == "e":
             print("journeying east")
-            current_room = current_room.e_to
+            player1.room = player1.room.e_to
         if cmd == "s":
             print("travelling south")
-            current_room = current_room.s_to
+            player1.room = player1.room.s_to
         if cmd == "w":
             print("heading west")
-            current_room = current_room.w_to
+            player1.room = player1.room.w_to
         if cmd == 'get':
-            print("adding", current_room.items, "to inventory")
-            player1.getItem(current_room.items) 
+            print("adding", player1.room.items, "to inventory")
+            player1.getItem(player1.room.items) 
         if cmd == 'inventory':
             print("Your inventory includes:", player1.items)
+        if cmd == 'search':
+            player1.room.printItems()
+            # print(f'you look around and see {room.items[0].name}')
             
-    except: 
-        print("Can't travel further in that direction")
+    except Exception as e: 
+        print("Can't travel further in that direction", e)
 # Write a loop that:
 #
 # * Prints the current room name
