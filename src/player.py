@@ -2,9 +2,10 @@
 # currently.
 
 class Player:
-  def __init__(self, name="link", rank="novice"):
+  def __init__(self, name="link", rank="novice", items=[]):
     self.name = name
     self.rank = rank
+    self.items = items
 
   def __str__(self):
     return "{name}"
