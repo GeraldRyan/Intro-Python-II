@@ -26,3 +26,7 @@ class Player:
     if cmd=="w":
       return "w"
 
+  def getItem(item):
+    self.items += item
+  def dropItem(item):
+    self.items -= item
