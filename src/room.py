@@ -12,17 +12,3 @@ class Room:
 
 
 
-
-
-  # 
-
-  # def move(cmd):
-  #   if cmd=n:
-      
-  #   if cmd=s:
-
-  #   if cmd=e:
-
-  #   if cmd=w:
-
-  #   if cmd=q:

@@ -9,20 +9,19 @@ class Player:
   def __str__(self):
     return "{name}"
 
-  def move(self,cmd):
-    if cmd=="n":
-      print("Helo N")
-      exit()
-    if cmd=="s":
-      exit()
-    if cmd=="e":
-      print("E")
-    if cmd=="w":
-      exit()
-    if cmd=="q":
-      print("Goodbye {self.name}")
-      exit()
   def play(self):
-    cmd = input(">>>")
-    self.move(cmd)
+    cmd = input(">>> ")
+    if cmd=="q":
+      exit()
+      print("Goodbye {self.name}")
+    if cmd=="h":
+      print("Help: Press n for north, e for east, w for west and s for south. press q to quit")
+    if cmd=="n":
+      return "n"
+    if cmd=="s":
+      return "s"
+    if cmd=="e":
+      return "e"
+    if cmd=="w":
+      return "w"
 

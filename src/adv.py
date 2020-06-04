@@ -49,10 +49,26 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 name = introduction()
+current_room = room['outside']
 player1 = Player(name, 'novice')
 while True:
-    player1.play()
-
+    print(current_room.name, current_room.desc)
+    cmd = player1.play()
+    try:
+        if cmd == "n":
+            print("Going north")
+            current_room = current_room.n_to
+        if cmd == "e":
+            print("journeying east")
+            current_room = current_room.e_to
+        if cmd == "s":
+            print("travelling south")
+            current_room = current_room.s_to
+        if cmd == "w":
+            print("heading west")
+            current_room = current_room.w_to
+    except: 
+        print("Can't travel further in that direction")
 # Write a loop that:
 #
 # * Prints the current room name
